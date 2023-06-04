@@ -1,0 +1,34 @@
+train_folder: D:\YEAH_BUDDY\datasets\crack_detection\histogram_equalized\poisson_augmented
+val_folder: D:\YEAH_BUDDY\datasets\crack_detection\histogram_equalized\crack_images
+classes_file: D:\YEAH_BUDDY\datasets\crack_detection\classes.txt
+save_folder: D:\YEAH_BUDDY\projects\crack_detection\training_outputs
+
+model_version: lraspp_custom
+save_add_string: _
+load_prev: false
+weight_load_path: None
+ema: false
+
+batch_size: 4
+lr: 0.0001
+lr_scaling_backbone: 1.0
+weight_decay: 0.00001
+optimizer: rms
+class_weights: [0.2, 1.7]
+train_backbone: true
+ignore_index: -1
+loss_function: focal_loss
+gamma_focal_loss: 2.0
+
+epochs: 5
+eval_interval: -1
+lr_red_epochs: [1, 2]
+lr_red_factors: [0.1, 0.1]
+early_stopping: false
+early_stopping_counts: 5
+early_stopping_metric: f1
+
+img_shape: [700, 700]
+divisibility: 2
+norm_means: [0.2714, 0.2714, 0.2714]
+norm_stds: [0.1956, 0.1956, 0.1956]
